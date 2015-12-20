@@ -189,6 +189,7 @@ static BOOL disableCustomEasing = NO;
 @interface JGActionSheetSection ()
 
 @property (nonatomic, assign) NSUInteger index;
+@property (nonatomic) UIColor *sectionBackgroundColor;
 
 @property (nonatomic, copy) void (^buttonPressedBlock)(NSIndexPath *indexPath);
 
@@ -204,11 +205,12 @@ static BOOL disableCustomEasing = NO;
     return [self sectionWithTitle:nil message:nil buttonTitles:@[NSLocalizedString(@"Cancel",)] buttonStyle:JGActionSheetButtonStyleCancel];
 }
 
-+ (instancetype)sectionWithTitle:(NSString *)title message:(NSString *)message buttonTitles:(NSArray *)buttonTitles buttonStyle:(JGActionSheetButtonStyle)buttonStyle {
-    return [[self alloc] initWithTitle:title message:message buttonTitles:buttonTitles buttonStyle:buttonStyle];
++ (instancetype)sectionWithTitle:(NSString *)title message:(NSString *)message buttonTitles:(NSArray *)buttonTitles buttonStyle:(JGActionSheetButtonStyle)buttonStyle backgroundColor:(UIColor *)backgroundColor {
+    return [[self alloc] initWithTitle:title message:message buttonTitles:buttonTitles buttonStyle:buttonStyle backgroundColor:backgroundColor];
 }
 
-- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message buttonTitles:(NSArray *)buttonTitles buttonStyle:(JGActionSheetButtonStyle)buttonStyle {
+- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message buttonTitles:(NSArray *)buttonTitles buttonStyle:(JGActionSheetButtonStyle)buttonStyle backgroundColor:(UIColor *)backgroundColor{
+    self.sectionBackgroundColor = backgroundColor;
     self = [super init];
     
     if (self) {
@@ -320,7 +322,7 @@ static BOOL disableCustomEasing = NO;
         self.layer.shadowOpacity = 0.0f;
     }
     else {
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = self.sectionBackgroundColor;
         self.layer.cornerRadius = kHostsCornerRadius;
         
         self.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -394,12 +396,12 @@ static BOOL disableCustomEasing = NO;
         
         backgroundColor = rgb(52.0f, 152.0f, 219.0f);
         borderColor = rgb(41.0f, 128.0f, 185.0f);
-    } else if (buttonStyle == TSButtonStyleBlue) {
+    } else if (buttonStyle == JGActionSheetButtonStyleTSBlue) {
         font = [UIFont systemFontOfSize:15.0f];
         titleColor = [UIColor whiteColor];
         
         backgroundColor = rgb(0.0f, 125.0f, 254.0f);
-        borderColor = backgroundColor
+        borderColor = backgroundColor;
     }
     
     [button setTitleColor:titleColor forState:UIControlStateNormal];

@@ -84,7 +84,7 @@ typedef NS_ENUM(NSUInteger, JGActionSheetArrowDirection) {
  @param buttonTitles The titles for the buttons in the section.
  @param buttonStyle The style to apply to the buttons. This can be altered later with the @c setButtonStyle:forButtonAtIndex: method
  */
-- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message buttonTitles:(NSArray *)buttonTitles buttonStyle:(JGActionSheetButtonStyle)buttonStyle;
+- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message buttonTitles:(NSArray *)buttonTitles buttonStyle:(JGActionSheetButtonStyle)buttonStyle backgroundColor:(UIColor *)backgroundColor;
 
 /**
  Convenience initializer for the @c initWithTitle:message:contentView: method.
