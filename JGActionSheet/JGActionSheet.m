@@ -205,6 +205,10 @@ static BOOL disableCustomEasing = NO;
     return [self sectionWithTitle:nil message:nil buttonTitles:@[NSLocalizedString(@"Cancel",)] buttonStyle:JGActionSheetButtonStyleCancel];
 }
 
++ (instancetype)sectionWithTitle:(NSString *)title message:(NSString *)message buttonTitles:(NSArray *)buttonTitles buttonStyle:(JGActionSheetButtonStyle)buttonStyle{
+    return [[self alloc] initWithTitle:title message:message buttonTitles:buttonTitles buttonStyle:buttonStyle backgroundColor:[UIColor whiteColor]];
+}
+
 + (instancetype)sectionWithTitle:(NSString *)title message:(NSString *)message buttonTitles:(NSArray *)buttonTitles buttonStyle:(JGActionSheetButtonStyle)buttonStyle backgroundColor:(UIColor *)backgroundColor {
     return [[self alloc] initWithTitle:title message:message buttonTitles:buttonTitles buttonStyle:buttonStyle backgroundColor:backgroundColor];
 }
