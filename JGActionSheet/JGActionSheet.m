@@ -394,6 +394,12 @@ static BOOL disableCustomEasing = NO;
         
         backgroundColor = rgb(52.0f, 152.0f, 219.0f);
         borderColor = rgb(41.0f, 128.0f, 185.0f);
+    } else if (buttonStyle == TSButtonStyleBlue) {
+        font = [UIFont systemFontOfSize:15.0f];
+        titleColor = [UIColor whiteColor];
+        
+        backgroundColor = rgb(0.0f, 125.0f, 254.0f);
+        borderColor = backgroundColor
     }
     
     [button setTitleColor:titleColor forState:UIControlStateNormal];
