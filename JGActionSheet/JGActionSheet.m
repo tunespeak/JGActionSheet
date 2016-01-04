@@ -49,7 +49,7 @@
 
 #define kHostsCornerRadius 3.0f
 
-#define kSpacing 5.0f
+#define kSpacing 7.5f
 
 #define kArrowBaseWidth 20.0f
 #define kArrowHeight 10.0f
@@ -404,7 +404,13 @@ static BOOL disableCustomEasing = NO;
         font = [UIFont systemFontOfSize:15.0f];
         titleColor = [UIColor whiteColor];
         
-        backgroundColor = rgb(0.0f, 125.0f, 254.0f);
+        backgroundColor = rgb(0.0f, 90.0f, 180.0f);
+        borderColor = backgroundColor;
+    } else if (buttonStyle == JGActionSheetButtonStyleTSGray) {
+        font = [UIFont systemFontOfSize:15.0f];
+        titleColor = [UIColor whiteColor];
+        
+        backgroundColor = rgb(60.0f, 60.0f, 60.0f);
         borderColor = backgroundColor;
     }
     
@@ -441,7 +447,7 @@ static BOOL disableCustomEasing = NO;
 }
 
 - (CGRect)layoutForWidth:(CGFloat)width {
-    CGFloat buttonHeight = 40.0f;
+    CGFloat buttonHeight = 60.0f;
     CGFloat spacing = kSpacing;
     
     CGFloat height = 0.0f;
@@ -644,7 +650,7 @@ static BOOL disableCustomEasing = NO;
         frame.size.width = kFixedWidthContinuous;
     }
     
-    CGFloat spacing = 2.0f*kSpacing;
+    CGFloat spacing = 0;
     
     CGFloat width = CGRectGetWidth(frame);
     
