@@ -650,7 +650,7 @@ static BOOL disableCustomEasing = NO;
         frame.size.width = kFixedWidthContinuous;
     }
     
-    CGFloat spacing = 0;
+    CGFloat spacing = 5;
     
     CGFloat width = CGRectGetWidth(frame);
     
