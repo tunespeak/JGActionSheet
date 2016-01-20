@@ -601,6 +601,10 @@ static BOOL disableCustomEasing = NO;
     _realBGColor = backgroundColor;
 }
 
+- (void)setContentViewBackgroundColor:(UIColor *)color {
+    _scrollView.backgroundColor = color;
+}
+
 #pragma mark Callbacks
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {

@@ -34,12 +34,6 @@ typedef NS_ENUM(NSUInteger, JGActionSheetArrowDirection) {
     JGActionSheetArrowDirectionBottom,
 };
 
-
-
-
-
-
-
 /**
  A section for JGActionSheet.
  @sa JGActionSheet.
@@ -163,6 +157,8 @@ typedef NS_ENUM(NSUInteger, JGActionSheetArrowDirection) {
  A feature rich replacement for UIActionSheet.
  */
 @interface JGActionSheet : UIView
+
+@property (nonatomic) UIColor *contentViewBackgroundColor;
 
 /**
  The view in which the action sheet is presented.
