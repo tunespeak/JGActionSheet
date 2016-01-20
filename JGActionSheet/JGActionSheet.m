@@ -410,7 +410,7 @@ static BOOL disableCustomEasing = NO;
         font = [UIFont systemFontOfSize:15.0f];
         titleColor = [UIColor whiteColor];
         
-        backgroundColor = rgb(60.0f, 60.0f, 60.0f);
+        backgroundColor = rgb(80.0f, 80.0f, 90.0f);
         borderColor = backgroundColor;
     }
     
