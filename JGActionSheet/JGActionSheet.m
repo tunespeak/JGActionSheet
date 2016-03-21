@@ -404,7 +404,7 @@ static BOOL disableCustomEasing = NO;
         font = [UIFont systemFontOfSize:15.0f];
         titleColor = [UIColor whiteColor];
         
-        backgroundColor = rgb(0.0f, 90.0f, 180.0f);
+        backgroundColor = rgb(0.0f, 70.0f, 140.0f);
         borderColor = backgroundColor;
     } else if (buttonStyle == JGActionSheetButtonStyleTSGray) {
         font = [UIFont systemFontOfSize:15.0f];
