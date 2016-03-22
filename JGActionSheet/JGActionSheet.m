@@ -405,13 +405,13 @@ static BOOL disableCustomEasing = NO;
         titleColor = [UIColor whiteColor];
         
         backgroundColor = rgb(0.0f, 70.0f, 140.0f);
-        borderColor = backgroundColor;
+        borderColor = [UIColor clearColor];
     } else if (buttonStyle == JGActionSheetButtonStyleTSGray) {
         font = [UIFont systemFontOfSize:15.0f];
         titleColor = [UIColor whiteColor];
         
         backgroundColor = rgb(80.0f, 80.0f, 90.0f);
-        borderColor = backgroundColor;
+        borderColor = [UIColor clearColor];
     }
     
     [button setTitleColor:titleColor forState:UIControlStateNormal];
