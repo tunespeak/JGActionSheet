@@ -41,6 +41,11 @@ typedef NS_ENUM(NSUInteger, JGActionSheetArrowDirection) {
 @interface JGActionSheetSection : UIView
 
 /**
+ Tunespeak Addition
+ */
+@property (nonatomic) UIFont *font;
+
+/**
  The label containing the title of the section.
  */
 @property (nonatomic, strong, readonly) UILabel *titleLabel;
@@ -110,6 +115,7 @@ typedef NS_ENUM(NSUInteger, JGActionSheetArrowDirection) {
 
 @class JGActionSheet;
 
+
 /**
  The delegate for JGActionSheet.
  @sa JGActionSheet.
@@ -158,6 +164,9 @@ typedef NS_ENUM(NSUInteger, JGActionSheetArrowDirection) {
  */
 @interface JGActionSheet : UIView
 
+/**
+ Tunespeak Addition
+*/
 @property (nonatomic) UIColor *contentViewBackgroundColor;
 
 /**

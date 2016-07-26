@@ -339,7 +339,7 @@ static BOOL disableCustomEasing = NO;
 - (void)setButtonStyle:(JGActionSheetButtonStyle)buttonStyle forButtonAtIndex:(NSUInteger)index {
     if (index < self.buttons.count) {
         UIButton *button = self.buttons[index];
-        
+
         [self setButtonStyle:buttonStyle forButton:button];
     }
     else {
@@ -364,59 +364,55 @@ static BOOL disableCustomEasing = NO;
 
 - (void)setButtonStyle:(JGActionSheetButtonStyle)buttonStyle forButton:(UIButton *)button {
     UIColor *backgroundColor, *borderColor, *titleColor = nil;
-    UIFont *font = nil;
     
     if (buttonStyle == JGActionSheetButtonStyleDefault) {
-        font = [UIFont systemFontOfSize:15.0f];
         titleColor = [UIColor blackColor];
         
         backgroundColor = [UIColor colorWithWhite:0.95f alpha:1.0f];
         borderColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
     }
     else if (buttonStyle == JGActionSheetButtonStyleCancel) {
-        font = [UIFont boldSystemFontOfSize:15.0f];
         titleColor = [UIColor blackColor];
         
         backgroundColor = [UIColor colorWithWhite:0.95f alpha:1.0f];
         borderColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
     }
     else if (buttonStyle == JGActionSheetButtonStyleRed) {
-        font = [UIFont systemFontOfSize:15.0f];
         titleColor = [UIColor whiteColor];
         
         backgroundColor = rgb(231.0f, 76.0f, 60.0f);
         borderColor = rgb(192.0f, 57.0f, 43.0f);
     }
     else if (buttonStyle == JGActionSheetButtonStyleGreen) {
-        font = [UIFont systemFontOfSize:15.0f];
         titleColor = [UIColor whiteColor];
         
         backgroundColor = rgb(46.0f, 204.0f, 113.0f);
         borderColor = rgb(39.0f, 174.0f, 96.0f);
     }
     else if (buttonStyle == JGActionSheetButtonStyleBlue) {
-        font = [UIFont systemFontOfSize:15.0f];
         titleColor = [UIColor whiteColor];
         
         backgroundColor = rgb(52.0f, 152.0f, 219.0f);
         borderColor = rgb(41.0f, 128.0f, 185.0f);
     } else if (buttonStyle == JGActionSheetButtonStyleTSBlue) {
-        font = [UIFont systemFontOfSize:15.0f];
         titleColor = [UIColor whiteColor];
         
-        backgroundColor = rgb(0.0f, 70.0f, 140.0f);
-        borderColor = [UIColor clearColor];
+        backgroundColor = rgb(0.0f, 90.0f, 180.0f);
+        borderColor = backgroundColor;
     } else if (buttonStyle == JGActionSheetButtonStyleTSGray) {
-        font = [UIFont systemFontOfSize:15.0f];
         titleColor = [UIColor whiteColor];
         
         backgroundColor = rgb(80.0f, 80.0f, 90.0f);
-        borderColor = [UIColor clearColor];
+        borderColor = backgroundColor;
     }
     
     [button setTitleColor:titleColor forState:UIControlStateNormal];
     
-    button.titleLabel.font = font;
+    button.titleLabel.font = self.font;
+    
+    // NOTE: Tunespeak Addition
+    button.titleLabel.numberOfLines = 0;
+    button.titleLabel.textAlignment = NSTextAlignmentCenter;
     
     [button setBackgroundImage:[self pixelImageWithColor:backgroundColor] forState:UIControlStateNormal];
     [button setBackgroundImage:[self pixelImageWithColor:borderColor] forState:UIControlStateHighlighted];
@@ -506,6 +502,12 @@ static BOOL disableCustomEasing = NO;
     self.frame = (CGRect){CGPointZero, {width, height}};
     
     return self.frame;
+}
+
+// Tunespeak Addition
+
+-(UIFont *)font {
+    return (_font != nil) ? _font : [UIFont systemFontOfSize:15.0];
 }
 
 @end
