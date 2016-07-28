@@ -363,47 +363,33 @@ static BOOL disableCustomEasing = NO;
 }
 
 - (void)setButtonStyle:(JGActionSheetButtonStyle)buttonStyle forButton:(UIButton *)button {
-    UIColor *backgroundColor, *borderColor, *titleColor = nil;
+    UIColor *backgroundColor, *titleColor = nil;
     
     if (buttonStyle == JGActionSheetButtonStyleDefault) {
         titleColor = [UIColor blackColor];
-        
         backgroundColor = [UIColor colorWithWhite:0.95f alpha:1.0f];
-        borderColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
     }
     else if (buttonStyle == JGActionSheetButtonStyleCancel) {
         titleColor = [UIColor blackColor];
-        
         backgroundColor = [UIColor colorWithWhite:0.95f alpha:1.0f];
-        borderColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
     }
     else if (buttonStyle == JGActionSheetButtonStyleRed) {
         titleColor = [UIColor whiteColor];
-        
         backgroundColor = rgb(231.0f, 76.0f, 60.0f);
-        borderColor = rgb(192.0f, 57.0f, 43.0f);
     }
     else if (buttonStyle == JGActionSheetButtonStyleGreen) {
         titleColor = [UIColor whiteColor];
-        
         backgroundColor = rgb(46.0f, 204.0f, 113.0f);
-        borderColor = rgb(39.0f, 174.0f, 96.0f);
     }
     else if (buttonStyle == JGActionSheetButtonStyleBlue) {
         titleColor = [UIColor whiteColor];
-        
         backgroundColor = rgb(52.0f, 152.0f, 219.0f);
-        borderColor = rgb(41.0f, 128.0f, 185.0f);
     } else if (buttonStyle == JGActionSheetButtonStyleTSBlue) {
         titleColor = [UIColor whiteColor];
-        
         backgroundColor = rgb(0.0f, 90.0f, 180.0f);
-        borderColor = backgroundColor;
     } else if (buttonStyle == JGActionSheetButtonStyleTSGray) {
         titleColor = [UIColor whiteColor];
-        
         backgroundColor = rgb(80.0f, 80.0f, 90.0f);
-        borderColor = backgroundColor;
     }
     
     [button setTitleColor:titleColor forState:UIControlStateNormal];
@@ -416,8 +402,6 @@ static BOOL disableCustomEasing = NO;
     
     [button setBackgroundImage:[self pixelImageWithColor:backgroundColor] forState:UIControlStateNormal];
     [button setBackgroundImage:[self pixelImageWithColor:borderColor] forState:UIControlStateHighlighted];
-    
-    button.layer.borderColor = borderColor.CGColor;
 }
 
 - (JGButton *)makeButtonWithTitle:(NSString *)title style:(JGActionSheetButtonStyle)style {
