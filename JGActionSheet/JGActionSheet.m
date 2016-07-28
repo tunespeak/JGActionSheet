@@ -401,7 +401,6 @@ static BOOL disableCustomEasing = NO;
     button.titleLabel.textAlignment = NSTextAlignmentCenter;
     
     [button setBackgroundImage:[self pixelImageWithColor:backgroundColor] forState:UIControlStateNormal];
-    [button setBackgroundImage:[self pixelImageWithColor:borderColor] forState:UIControlStateHighlighted];
 }
 
 - (JGButton *)makeButtonWithTitle:(NSString *)title style:(JGActionSheetButtonStyle)style {
